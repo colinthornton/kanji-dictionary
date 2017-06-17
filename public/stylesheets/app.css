@@ -1,0 +1,24 @@
+.ui.menu > .ui.container > .item {
+  font-size: 1.25em;
+  letter-spacing: 1px;
+}
+
+.container.main {
+  margin-top: 7em;
+}
+
+.column > .ui.fluid.card > .content > .header {
+  font-size: 5em;
+}
+
+.container > .segment > .header {
+  font-size: 7em;
+}
+
+.card > .content > .description {
+  letter-spacing: 0.1em;
+}
+
+#delete-form {
+  display: inline;
+}

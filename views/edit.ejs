@@ -1,0 +1,32 @@
+<% include ./partials/header %>
+
+<div class="ui main text container">
+  <div class="ui huge header">edit card</div>
+  <form class="ui form" action="/kanji/<%= kanji._id %>?_method=PUT" method="POST">
+    <div class="field">
+      <label>kanji</label>
+      <input type="text" name="kanji[kanji]" value="<%= kanji.kanji %>">
+    </div>
+    <div class="field">
+      <label>onyomi</label>
+      <input type="text" name="kanji[onyomi]" value="<%= kanji.onyomi %>">
+    </div>
+    <div class="field">
+      <label>kunyomi</label>
+      <input type="text" name="kanji[kunyomi]" value="<%= kanji.kunyomi %>">
+    </div>
+    <div class="field">
+      <label>romaji</label>
+      <input type="text" name="kanji[romaji]" value="<%= kanji.romaji %>">
+    </div>
+    <div class="field">
+      <label>example</label>
+      <input type="text" name="kanji[example]" value="<%= kanji.example %>">
+    </div>
+    <div class="ui center aligned basic segment">
+      <button class="ui teal basic large button">submit</button>
+    </div>
+  </form>
+</div>
+
+<% include ./partials/footer %>

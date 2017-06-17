@@ -1,0 +1,23 @@
+<% include ./partials/header %>
+
+<div class="ui main text container">
+  <div class="ui segment">
+    <div class="ui huge center aligned header"><%= kanji.kanji %></div>
+    <div class="content">
+      <div class="description">
+        <p>onyomi: <%=kanji.onyomi%></p>
+        <p>kunyomi: <%=kanji.kunyomi%></p>
+        <p>romaji: <%=kanji.romaji%></p>
+        <p>example: <%=kanji.example%></p>
+      </div>
+    </div>
+  </div>
+  <div class="ui center aligned basic segment">
+    <a href="/kanji/<%= kanji._id %>/edit" class="ui primary center aligned basic button">edit</a>
+    <form id="delete-form" action="/kanji/<%= kanji._id %>?_method=DELETE" method="POST">
+      <button class="ui negative centered basic button">delete</button>
+    </form> 
+  </div>
+</div>
+
+<% include ./partials/footer %>

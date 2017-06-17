@@ -1,0 +1,23 @@
+<% include ./partials/header %>
+
+<div class="ui main center aligned container">
+  <div class="ui stackable grid">
+      <% kanji.forEach(function(kanji){ %>
+        <div class="four wide column">
+        <a class="ui teal fluid card" href="/kanji/<%= kanji._id %>">
+          <div class="content">
+            <div class="header kanji">
+              <%= kanji.kanji %>
+            </div>
+            <div class="left aligned description">
+              <p>onyomi: <%= kanji.onyomi %></p>
+              <p>kunyomi: <%= kanji.kunyomi %></p>
+            </div>
+          </div>
+        </a>
+        </div>
+      <% }) %>
+  </div>
+</div>
+
+<% include ./partials/footer %>

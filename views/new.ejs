@@ -1,0 +1,32 @@
+<% include ./partials/header %>
+
+<div class="ui main text container">
+  <div class="ui huge header">new card</div>
+  <form class="ui form" action="/kanji" method="POST">
+    <div class="field">
+      <label>kanji</label>
+      <input type="text" name="kanji[kanji]" placeholder="漢字">
+    </div>
+    <div class="field">
+      <label>onyomi</label>
+      <input type="text" name="kanji[onyomi]" placeholder="音読み">
+    </div>
+    <div class="field">
+      <label>kunyomi</label>
+      <input type="text" name="kanji[kunyomi]" placeholder="訓読み">
+    </div>
+    <div class="field">
+      <label>romaji</label>
+      <input type="text" name="kanji[romaji]" placeholder="ローマ字">
+    </div>
+    <div class="field">
+      <label>example</label>
+      <input type="text" name="kanji[example]" placeholder="例">
+    </div>
+    <div class="ui center aligned basic segment">
+      <button class="ui teal basic large button">submit</button>
+    </div>
+  </form>
+</div>
+
+<% include ./partials/footer %>
