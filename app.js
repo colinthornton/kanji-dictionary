@@ -3,7 +3,7 @@ var express = require("express"),
     bodyParser = require("body-parser"),
     mongoose = require("mongoose"),
     methodOverride = require("method-override");
-    
+
 mongoose.connect("mongodb://localhost/restful_kanji");
 app.set("view engine", "ejs");
 app.use(express.static("public"));
@@ -19,18 +19,6 @@ var kanjiSchema = new mongoose.Schema({
 });
 
 var Kanji = mongoose.model("Kanji", kanjiSchema);
-
-// Kanji.create({
-//   kanji: "人",
-//   onyomi: "じん、にん",
-//   kunyomi: "ひと"
-// }, function(err, kanji){
-//   if(err){
-//     console.log(err);
-//   } else {
-//     console.log(kanji);
-//   }
-// });
 
 app.get("/", function(req, res){
   res.redirect("/kanji");
