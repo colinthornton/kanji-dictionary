@@ -3,8 +3,9 @@ var express = require("express"),
     bodyParser = require("body-parser"),
     mongoose = require("mongoose"),
     methodOverride = require("method-override");
+    MLAB_URI = process.env.MLAB_URI;
 
-mongoose.connect("mongodb://localhost/restful_kanji");
+mongoose.connect(MLAB_URI, { useMongoClient: true });
 app.set("view engine", "ejs");
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({extended: true}));
@@ -101,6 +102,6 @@ app.delete("/kanji/:id", function(req, res){
   });
 });
 
-app.listen(process.env.PORT, process.env.IP, function(){
+app.listen(process.env.PORT || 8080, process.env.IP, function(){
   console.log("Kanji App Started");
 });
